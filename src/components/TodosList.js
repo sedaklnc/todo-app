@@ -23,18 +23,24 @@ const ToDosList = ({todos,setTodos,setEditTodo}) => {
   return (
     <div>
         {todos.map((todo)=>(<li className='list-item' key={todo.id}>
-            <input
+          <input
             type="text"
-            value={todo.title}
+            value={ todo.title}
             className={`list ${todo.completed ? 'complete':""}`}
-            onChange={(e)=>e.preventDefault()}></input>
+            onChange={(e)=>e.preventDefault()} onClick={()=>handleComplete(todo)}></input> 
             <div>
-              <button className='button-complete task-button' onClick={()=>handleComplete(todo)}>
-              C</button>
-              <button className='button-edit task-button' onClick={()=>handleEdit(todo)}>E</button>
-              <button className='button-delete task-button' onClick={()=>handleDelete(todo)}>D</button>
+            <button className='button-complete task-button' onClick={()=>handleComplete(todo)}>
+            <span class="material-symbols-outlined">done</span></button>
+              <button className='button-edit task-button' onClick={()=>handleEdit(todo)}><span class="material-symbols-outlined">
+drive_file_rename_outline
+</span></button>
+              <button className='button-delete task-button' onClick={()=>handleDelete(todo)}><span class="material-symbols-outlined">
+delete
+</span></button>
             </div>
         </li>))}
+
+        <div className='count-item'>{`you have ${todos.length} item`}</div>
     </div>
   )
 }
