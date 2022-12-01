@@ -15,11 +15,16 @@
 	background-color: #FFFFFF;
 	min-width: 450px;
 	min-height: 500px;
+	max-height: fit-content;
 	padding: 30px;
 	box-sizing: border-box;
 	border-radius: 10px;
 	box-shadow: 3px 6px 40px #000;
 	margin-bottom: 10px;
+	display:block;
+    height:70px;
+    overflow:scroll;
+	overflow-x: hidden;
 	}
 .header h1{
 	color: #11175E;
@@ -81,19 +86,21 @@ color: #ff6c6c;
 margin-right: 10px;
 }
 .button-edit {
-	color: #e2d029;
+	color: #4158D0;
 	margin-right: 10px;
 	}
-	.button-delete {
-	color: lightseagreen;
+.button-delete {
+	color: #FFCC70;
 	}
-	.complete {
+.complete {
 	text-decoration-style: solid;
 	text-decoration-line: line-through;
 	text-decoration-color: #ff6c6c;
 	opacity: 0.6;
 	}
-
+.list [type='checkbox']::after{
+	background-color: #C850C0;
+}
 .list{ 
 	width: 220px;
 	border: none;
@@ -107,4 +114,34 @@ margin-right: 10px;
 	color: #2D70FD;
 }
 
+.count-item{
+	position: relative;
+	font-style: italic;
+	font-size: 13px;
+	text-align: left;
+	margin-top: 260px;
+}
 
+
+::-webkit-scrollbar{
+	width: 1em;
+}
+
+::-webkit-scrollbar-track {
+	background: #ffffff;
+
+  }
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);;
+  }
+
+  ::-webkit-scrollbar-thumb {
+	background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);;
+	border-radius: 10vw;
+	border: 0.20rem solid #ffffff;
+  }
+  ::-webkit-scrollbar-track {
+	background: #ffffff;
+	border-radius: 10vw;
+	margin-block: 0.5rem;
+  }
