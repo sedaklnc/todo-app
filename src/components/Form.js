@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-// adding list item in our app
 
 function Form({input,setInput,todos,setTodos,editTodo,setEditTodo}) {
   
@@ -29,14 +28,10 @@ function Form({input,setInput,todos,setTodos,editTodo,setEditTodo}) {
     else{
       updateTodo(input,editTodo.id,editTodo.completed)
     }
-
-   
-
-
   }
   return (
     <form className='input-part' onSubmit={onFormSubmit}>
-      <input type="text" placeholder='Add new list item' className="task-input" value={input} required onChange={onInputChange} /> 
+      <input type="text" placeholder='Add new list item' className="task-input" value={input} required onChange={onInputChange} />
       <button className='button-add' type='submit'>
         {editTodo ? 'Ok' : 'Add'}
       </button> 
